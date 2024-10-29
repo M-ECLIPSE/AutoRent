@@ -16,6 +16,7 @@ class Admin extends Model
             'national_code',
             'phone',
             'email',
-            'birth_date'
+            'birth_date',
+            'url_picture'
         ];
 }

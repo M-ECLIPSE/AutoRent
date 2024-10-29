@@ -17,7 +17,8 @@ class Cars extends Model
             'model',
             'color',
             'year',
-            'status'
+            'status',
+            'url_picture'
         ];
 
 

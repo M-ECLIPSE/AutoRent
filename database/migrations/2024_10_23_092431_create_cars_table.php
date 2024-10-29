@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('color')->nullable();
             $table->string('year')->nullable();
             $table->enum('status',['active' , 'deactivate']);
+            $table->string('url_picture')->nullable();
             $table->timestamps();
         });
     }
