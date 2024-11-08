@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('cars/{cars}/show' ,[\App\Http\Controllers\CarsController::class, 'show']);
 Route::get('cars/list' ,[\App\Http\Controllers\CarsController::class, 'showList']);
 Route::post('cars/store',[\App\Http\Controllers\CarsController::class,'StoreCar']);
+Route::put('cars/{cars}/update',[\App\Http\Controllers\CarsController::class,'update']);
+Route::delete('cars/{cars}/delete',[\App\Http\Controllers\CarsController::class,'delete']);
 
 Route::get('admin/{admin}/show' ,[\App\Http\Controllers\AdminController::class, 'show']);
 Route::get('admin/list' ,[\App\Http\Controllers\AdminController::class, 'showList']);

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CarsUpdateRequest;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Resources\CarsResource;
+use App\Http\Resources\CarsUpdateResource;
 use App\Models\Cars;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -68,6 +70,23 @@ class CarsController extends Controller
                 "data" => CarsResource::collection($Cars)
             ]);
         }
+    }
+
+    public function update(CarsUpdateRequest $carsUpdateRequest , Cars $cars)
+    {
+        $cars->update($carsUpdateRequest->all());
+        return response()->json([
+            "massage" => "اطلاعات خودرو موردنطر با موفقیت بروزرسانی شد",
+            "data" => new CarsUpdateResource($cars)
+        ],200);
+    }
+
+    public function delete(Cars $cars)
+    {
+        $cars->delete();
+        return response()->json([
+            "massage" => "خودرو موردنطر حذف شد",
+        ],200);
     }
 }
 

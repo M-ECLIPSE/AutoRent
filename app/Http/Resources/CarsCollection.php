@@ -14,6 +14,10 @@ class CarsCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return
+        [
+            'name'=>['required'],
+            'company'=>['required'],
+        ];
     }
 }
