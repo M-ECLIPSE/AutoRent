@@ -27,8 +27,12 @@ Route::get('admin/{admin}/show' ,[\App\Http\Controllers\AdminController::class, 
 Route::get('admin/list' ,[\App\Http\Controllers\AdminController::class, 'showList']);
 Route::post('admin/store',[\App\Http\Controllers\AdminController::class,'StoreAdmin']);
 
+Route::post('auth/check/user/exist' ,[\App\Http\Controllers\User\UserController::class, 'ChkUser']);
+Route::post('auth/check/user/otp' ,[\App\Http\Controllers\User\UserController::class, 'ChkOtp']);
+
 Route::middleware('auth:sanctum')->group( function () {
 
-
+    Route::get('user/{user}/info',[\App\Http\Controllers\User\UserController::class,'info_user']);
 });
+
 
