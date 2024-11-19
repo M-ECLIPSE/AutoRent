@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('family');
+            $table->string('user_code');
             $table->string('national_code');
             $table->string('mobile');
             $table->string('avatar')->nullable();

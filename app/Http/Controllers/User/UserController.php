@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CheckOtpRequest;
 use App\Http\Requests\otpCodeRequest;
+use App\Http\Requests\UserStoreRequest;
 use App\Http\Resources\UserOtpResource;
 use App\Http\Resources\UserResource;
 use App\Models\Otp;
@@ -15,6 +16,11 @@ use Illuminate\Http\Request;
 
 class  UserController extends Controller
 {
+
+    public function store(UserStoreRequest $userStoreRequest)
+    {
+        User::create($userStoreRequest->all());
+    }
     public function ChkUser(otpCodeRequest $otpCodeRequest)
     {
         $user = User::where('mobile',$otpCodeRequest->mobile)->first();

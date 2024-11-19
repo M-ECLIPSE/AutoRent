@@ -29,6 +29,7 @@ Route::post('admin/store',[\App\Http\Controllers\AdminController::class,'StoreAd
 
 Route::post('auth/check/user/exist' ,[\App\Http\Controllers\User\UserController::class, 'ChkUser']);
 Route::post('auth/check/user/otp' ,[\App\Http\Controllers\User\UserController::class, 'ChkOtp']);
+Route::post('auth/user/store' ,[\App\Http\Controllers\User\UserController::class, 'store']);
 
 Route::middleware('auth:sanctum')->group( function () {
 
