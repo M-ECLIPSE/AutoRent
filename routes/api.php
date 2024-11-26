@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 });*/
 Route::get('cars/{cars}/show' ,[\App\Http\Controllers\CarsController::class, 'show']);
 Route::get('cars/list' ,[\App\Http\Controllers\CarsController::class, 'showList']);
-Route::post('cars/store',[\App\Http\Controllers\CarsController::class,'StoreCar']);
 Route::put('cars/{cars}/update',[\App\Http\Controllers\CarsController::class,'update']);
 Route::delete('cars/{cars}/delete',[\App\Http\Controllers\CarsController::class,'delete']);
 
@@ -34,6 +33,9 @@ Route::post('auth/user/store' ,[\App\Http\Controllers\User\UserController::class
 Route::middleware('auth:sanctum')->group( function () {
 
     Route::get('user/{user}/info',[\App\Http\Controllers\User\UserController::class,'info_user']);
+    Route::post('cars/store',[\App\Http\Controllers\CarsController::class,'StoreCar']);
+
+
 });
 
 

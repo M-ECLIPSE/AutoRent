@@ -9,6 +9,7 @@ use App\Http\Resources\CarsUpdateResource;
 use App\Models\Cars;
 use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,6 +17,7 @@ class CarsController extends Controller
 {
     public function StoreCar(StoreCarRequest $storeCarRequest)
     {
+
         $cars = Cars::create($storeCarRequest->all());
         if($storeCarRequest->hasFile('picture'))
         {

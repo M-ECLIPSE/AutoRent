@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Http\Controllers\User\UserController;
+use App\Models\Cars;
 use App\Models\User;
+use App\Observers\CarObserver;
 use App\Observers\UserObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -29,6 +31,8 @@ class EventServiceProvider extends ServiceProvider
     public function boot(): void
     {
         User::observe(UserObserver::class);
+        Cars::observe(CarObserver::class);
+
     }
 
     /**

@@ -20,7 +20,8 @@ class CarsResource extends JsonResource
         [
             'id'=>$this->id,
             'name'=>$this->name,
-            'url_picture'=>$this->url_picture
+            'url_picture'=>$this->url_picture,
+            'users' => new UserResource($this->user)
         ];
     }
 }
